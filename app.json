@@ -16,17 +16,17 @@
     "API_ID": {
       "description": "Get this value from https://my.telegram.org (API Development Tools)",
       "required": true,
-      "value": ""
+      "value": "26066227"
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org (API Development Tools)",
       "required": true,
-      "value": ""
+      "value": "ccc671534727ba045306c5d27fde1475"
     },
     "BOT_TOKEN": {
       "description": "A Bot token from @BotFather",
       "required": true,
-      "value": "mongodb+srv://pusers:nycreation@nycreation.pd4klp1.mongodb.net/?retryWrites=true&w=majority&appName=NYCREATION"
+      "value": ""
     },
     "STRING_SESSION": {
       "description": "Fill Here A Pyrogram String Session For Id-Chatbot, Get it from: https://telegram.tools/session-string-generator#pyrogram,user (Optional, skip if you don't want id-chatbot)",
@@ -36,7 +36,7 @@
     "MONGO_URL": {
       "description": "Get a MongoDB connection string from https://cloud.mongodb.com",
       "required": true,
-      "value": ""
+      "value": "mongodb+srv://pusers:nycreation@nycreation.pd4klp1.mongodb.net/?retryWrites=true&w=majority&appName=NYCREATION"
     },
     "OWNER_ID": {
       "description": "Fill Here Your Owner User Id (numeric)",
