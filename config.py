@@ -5,7 +5,7 @@ load_dotenv()
 
 # Telegram API
 API_ID = int(os.getenv("API_ID", "26066227"))  
-API_HASH = os.getenv("API_HASH", "4e984ea35f854762dcde906dce426c2d")
+API_HASH = os.getenv("API_HASH", "ccc671534727ba045306c5d27fde1475")
 
 # Bot Token / String Session
 BOT_TOKEN = os.getenv("BOT_TOKEN", "")
