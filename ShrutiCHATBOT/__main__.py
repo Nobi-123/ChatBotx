@@ -73,22 +73,22 @@ async def anony_boot():
     try:
         await ShrutiCHATBOT.set_bot_commands(
             commands=[
-                   BotCommand("start", "Start the bot"),
-                   BotCommand("help", "Get the help menu"),
-                   BotCommand("clone", "Make your own chatbot"),
-                   BotCommand("idclone", "Make your id-chatbot"),
-                   BotCommand("cloned", "Get List of all cloned bot"),
-                   BotCommand("ping", "Check if the bot is alive or dead"),
-                   BotCommand("lang", "Select bot reply language"),
-                   BotCommand("chatlang", "Get current using lang for chat"),
-                   BotCommand("resetlang", "Reset to default bot reply lang"),
-                   BotCommand("id", "Get users user_id"),
-                   BotCommand("stats", "Check bot stats"),
-                   BotCommand("gcast", "Broadcast any message to groups/users"),
+                   BotCommand("cstart", "Start the bot"),
+                   BotCommand("chelp", "Get the help menu"),
+                 #  BotCommand("clone", "Make your own chatbot"),
+                 #  BotCommand("idclone", "Make your id-chatbot"),
+                 #  BotCommand("cloned", "Get List of all cloned bot"),
+                 #  BotCommand("ping", "Check if the bot is alive or dead"),
+                   BotCommand("clang", "Select bot reply language"),
+                 #  BotCommand("chatlang", "Get current using lang for chat"),
+                   BotCommand("cresetlang", "Reset to default bot reply lang"),
+                 #  BotCommand("id", "Get users user_id"),
+                 #  BotCommand("stats", "Check bot stats"),
+                 #  BotCommand("gcast", "Broadcast any message to groups/users"),
                    BotCommand("chatbot", "Enable or disable chatbot"),
-                   BotCommand("status", "Check chatbot enable or disable in chat"),
+                 #  BotCommand("status", "Check chatbot enable or disable in chat"),
                    BotCommand("shayri", "Get random shayri for love"),
-                   BotCommand("ask", "Ask anything from ChatGPT"),
+                #   BotCommand("ask", "Ask anything from ChatGPT"),
            ]
         )
         LOGGER.info("✅ Bot commands set successfully.")
