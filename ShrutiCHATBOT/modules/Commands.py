@@ -69,7 +69,7 @@ async def set_language(client: Client, message: Message):
     )
 
 
-@ShrutiCHATBOT.on_message(filters.command("status"))
+@ShrutiCHATBOT.on_message(filters.command("okokokostatus"))
 async def status_command(client: Client, message: Message):
     chat_id = message.chat.id
     chat_status = await status_db.find_one({"chat_id": chat_id})
