@@ -37,7 +37,7 @@ status_db = db.chatbot_status_db.status
 
 
 @ShrutiCHATBOT.on_message(
-    filters.command(["restart"]) & filters.user(int(OWNER_ID))
+    filters.command(["crestart"]) & filters.user(int(OWNER_ID))
 )
 async def restart(client: Client, message: Message):
     reply = await message.reply_text("**🔁 Rᴇsᴛᴀʀᴛɪɴɢ 🔥 ...**")
@@ -61,7 +61,7 @@ async def get_chat_language(chat_id):
     chat_lang = await lang_db.find_one({"chat_id": chat_id})
     return chat_lang["language"] if chat_lang and "language" in chat_lang else "en"
     
-@ShrutiCHATBOT.on_message(filters.command(["lang", "language", "setlang"]))
+@ShrutiCHATBOT.on_message(filters.command(["clang", "clanguage", "csetlang"]))
 async def set_language(client: Client, message: Message):
     await message.reply_text(
         "Please select your chat language:",
@@ -80,7 +80,7 @@ async def status_command(client: Client, message: Message):
         await message.reply("No status found for this chat.")
 
 
-@ShrutiCHATBOT.on_message(filters.command(["lang", "language", "setlang"]))
+@ShrutiCHATBOT.on_message(filters.command(["clang", "clanguage", "csetlang"]))
 async def set_language(client: Client, message: Message):
     await message.reply_text(
         "Please select your chat language:",
