@@ -30,7 +30,6 @@ from ShrutiCHATBOT.modules.helpers import (
     TOOLS_DATA_READ,
 )
 
-
 lang_db = db.ChatLangDb.LangCollection
 status_db = db.chatbot_status_db.status
 
@@ -57,6 +56,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=HELP_READ,
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
             disable_web_page_preview=True,
+            parse_mode="html",
         )
 
     # Close menu
@@ -66,60 +66,68 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     # Go back to the main menu
     elif query.data == "BACK":
-        await query.message.edit(
+        await query.message.edit_text(
             text=START,
             reply_markup=InlineKeyboardMarkup(DEV_OP),
+            parse_mode="html",
         )
 
     # Show source information
     elif query.data == "SOURCE":
-        await query.message.edit(
+        await query.message.edit_text(
             text=SOURCE_READ,
             reply_markup=InlineKeyboardMarkup(BACK),
             disable_web_page_preview=True,
+            parse_mode="html",
         )
 
     # Show about information
     elif query.data == "ABOUT":
-        await query.message.edit(
+        await query.message.edit_text(
             text=ABOUT_READ,
             reply_markup=InlineKeyboardMarkup(ABOUT_BTN),
             disable_web_page_preview=True,
+            parse_mode="html",
         )
 
     # Show admin information
     elif query.data == "ADMINS":
-        await query.message.edit(
+        await query.message.edit_text(
             text=ADMIN_READ,
             reply_markup=InlineKeyboardMarkup(MUSIC_BACK_BTN),
+            parse_mode="html",
         )
 
     # Show tools information
     elif query.data == "TOOLS_DATA":
-        await query.message.edit(
+        await query.message.edit_text(
             text=TOOLS_DATA_READ,
             reply_markup=InlineKeyboardMarkup(CHATBOT_BACK),
+            parse_mode="html",
         )
 
     # Back to the help menu
     elif query.data == "BACK_HELP":
-        await query.message.edit(
+        await query.message.edit_text(
             text=HELP_READ,
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
+            parse_mode="html",
         )
 
     # Chatbot commands
     elif query.data == "CHATBOT_CMD":
-        await query.message.edit(
+        await query.message.edit_text(
             text=CHATBOT_READ,
             reply_markup=InlineKeyboardMarkup(CHATBOT_BACK),
+            parse_mode="html",
         )
 
     # Back to the chatbot menu
     elif query.data == "CHATBOT_BACK":
-        await query.message.edit(
+        await query.message.edit_text(
             text=HELP_READ,
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
+            parse_mode="html",
         )
 
     # Enable chatbot for the chat
@@ -127,8 +135,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         chat_id = query.message.chat.id
         status_db.update_one({"chat_id": chat_id}, {"$set": {"status": "enabled"}}, upsert=True)
         await query.answer("Chatbot enabled ✅", show_alert=True)
-        await query.edit_message_text(
-            f"Chat: {query.message.chat.title}\n**Chatbot has been enabled.**"
+        await query.message.edit_text(
+            f"Chat: {query.message.chat.title}\n<b>Chatbot has been enabled.</b>",
+            parse_mode="html",
         )
 
     # Disable chatbot for the chat
@@ -136,8 +145,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         chat_id = query.message.chat.id
         status_db.update_one({"chat_id": chat_id}, {"$set": {"status": "disabled"}}, upsert=True)
         await query.answer("Chatbot disabled!", show_alert=True)
-        await query.edit_message_text(
-            f"Chat: {query.message.chat.title}\n**Chatbot has been disabled.**"
+        await query.message.edit_text(
+            f"Chat: {query.message.chat.title}\n<b>Chatbot has been disabled.</b>",
+            parse_mode="html",
         )
 
     # Set chat language
@@ -147,7 +157,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if lang_code in languages.values():
             lang_db.update_one({"chat_id": chat_id}, {"$set": {"language": lang_code}}, upsert=True)
             await query.answer(f"Your chat language has been set to {lang_code.title()}.", show_alert=True)
-            await query.message.edit_text(f"Chat language has been set to {lang_code.title()}.")
+            await query.message.edit_text(
+                f"Chat language has been set to {lang_code.title()}.",
+                parse_mode="html",
+            )
         else:
             await query.answer("Invalid language selection.", show_alert=True)
 
@@ -156,12 +169,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         chat_id = query.message.chat.id
         lang_db.update_one({"chat_id": chat_id}, {"$set": {"language": "nolang"}}, upsert=True)
         await query.answer("Bot language has been reset to mix language.", show_alert=True)
-        await query.message.edit_text("**Bot language has been reset to mix language.**")
+        await query.message.edit_text(
+            "<b>Bot language has been reset to mix language.</b>",
+            parse_mode="html",
+        )
 
     # Choose language for the chatbot
     elif query.data == "choose_lang":
         await query.answer("Choose chatbot language for this chat.", show_alert=True)
         await query.message.edit_text(
-            "**Please select your preferred language for the chatbot.**",
-            reply_markup=generate_language_buttons(languages)
+            "<b>Please select your preferred language for the chatbot.</b>",
+            reply_markup=generate_language_buttons(languages),
+            parse_mode="html",
         )
