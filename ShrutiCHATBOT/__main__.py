@@ -87,7 +87,7 @@ async def anony_boot():
                  #  BotCommand("gcast", "Broadcast any message to groups/users"),
                    BotCommand("chatbot", "Enable or disable chatbot"),
                  #  BotCommand("status", "Check chatbot enable or disable in chat"),
-                   BotCommand("shayri", "Get random shayri for love"),
+                   BotCommand("cshayri", "Get random shayri for love"),
                 #   BotCommand("ask", "Ask anything from ChatGPT"),
            ]
         )
