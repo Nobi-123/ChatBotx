@@ -60,7 +60,7 @@ SHAYRI = [
 
 
 
-SHAYRI_COMMAND = ["gf", "bf", "shayri", "sari", "shari", "love"]
+SHAYRI_COMMAND = [ "shayri" ]
 
 
 @ShrutiCHATBOT.on_message(filters.command(SHAYRI_COMMAND))
@@ -72,10 +72,10 @@ async def shayri(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "❍ 𝐒ᴜᴘᴘᴏʀᴛ ❍", url=f"https://t.me/creativeydv"
+                        "❍ 𝐒ᴜᴘᴘᴏʀᴛ ❍", url=f"https://t.me/jarvisXsupport"
                     ),
                     InlineKeyboardButton(
-                        "❍ 𝐔ᴘᴅᴀᴛᴇ ❍", url=f"https://t.me/Nycreationchatzone"
+                        "❍ 𝐔ᴘᴅᴀᴛᴇ ❍", url=f"https://t.me/botXjarvis"
                     ),
                 ]
             ]
