@@ -349,7 +349,7 @@ async def ping(_, message: Message):
 
     ms = (datetime.now() - start).microseconds / 1000
     await loda.edit_text(
-        text=f"нey вαву!!\n{ShrutiCHATBOT.name} ᴄʜᴀᴛʙᴏᴛ ιѕ alιve  αnd worĸιng ғιne wιтн a pιng oғ\n\n➲ `{ms}` ms\n ➲ ᴄᴘᴜ: {CPU}\n➲ ʀᴀᴍ: {RAM}\n➲ ᴅɪsᴋ: {DISK}\n➲ ᴜᴘᴛɪᴍᴇ » {UP}\n\n<b>⋆ʟᴏᴠᴇ ᴡɪᴛʜ⋆ [ 𓂃❛ 𝐙 𝛆 ʀ 𝛂 ƚ 𝐡 𝚘 δ ](https://t.me/Og_Zerathos) </b>",
+        text=f"нey вαву!!\n{ShrutiCHATBOT.name} ᴄʜᴀᴛʙᴏᴛ ιѕ alιve  αnd worĸιng ғιne wιтн a pιng oғ\n\n `{ms}` ms\n ➲ ᴄᴘᴜ: {CPU}\n➲ ʀᴀᴍ: {RAM}\n➲ ᴅɪsᴋ: {DISK}\n➲ ᴜᴘᴛɪᴍᴇ » {UP}\n\n<b>⋆ʟᴏᴠᴇ ᴡɪᴛʜ⋆ [ 𓂃❛ 𝐙 𝛆 ʀ 𝛂 ƚ 𝐡 𝚘 δ ](https://t.me/Og_Zerathos) </b>",
         reply_markup=InlineKeyboardMarkup(PNG_BTN),
     )
     if message.chat.type == ChatType.PRIVATE:
