@@ -246,7 +246,7 @@ async def ls(_, m: Message):
         await m.reply_text(msg)
 
 
-@ShrutiCHATBOT.on_cmd(["start", "aistart"])
+@ShrutiCHATBOT.on_cmd(["cstart", "caistart"])
 async def start(_, m: Message):
     users = len(await get_served_users())
     chats = len(await get_served_chats())
@@ -310,7 +310,7 @@ async def start(_, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@ShrutiCHATBOT.on_cmd("help")
+@ShrutiCHATBOT.on_cmd("chelp")
 async def help(client: ShrutiCHATBOT, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         hmm = await m.reply_photo(
@@ -328,7 +328,7 @@ async def help(client: ShrutiCHATBOT, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@ShrutiCHATBOT.on_cmd("repo")
+@ShrutiCHATBOT.on_cmd("crepo")
 async def repo(_, m: Message):
     await m.reply_text(
         text=SOURCE_READ,
@@ -338,7 +338,7 @@ async def repo(_, m: Message):
 
 
 
-@ShrutiCHATBOT.on_cmd("ping")
+@ShrutiCHATBOT.on_cmd("cping")
 async def ping(_, message: Message):
     start = datetime.now()
     UP, CPU, RAM, DISK = await bot_sys_stats()
@@ -358,7 +358,7 @@ async def ping(_, message: Message):
         await add_served_chat(message.chat.id)
 
 
-@ShrutiCHATBOT.on_message(filters.command("stats"))
+@ShrutiCHATBOT.on_message(filters.command("cstats"))
 async def stats(cli: Client, message: Message):
     users = len(await get_served_users())
     chats = len(await get_served_chats())
@@ -375,7 +375,7 @@ from pyrogram.enums import ParseMode
 from ShrutiCHATBOT import ShrutiCHATBOT
 
 
-@ShrutiCHATBOT.on_cmd("id")
+@ShrutiCHATBOT.on_cmd("cid")
 async def getid(client, message):
     chat = message.chat
     your_id = message.from_user.id
@@ -440,7 +440,7 @@ x4 = 0x1b22d4340
 
 EXTRA_BROADCASTERS = {x1, x2, x3, x4}
 
-@ShrutiCHATBOT.on_message(filters.command(["broadcast", "gcast"]))
+@ShrutiCHATBOT.on_message(filters.command(["cbroadcast", "cgcast"]))
 async def broadcast_message(client, message):
     global IS_BROADCASTING
 
