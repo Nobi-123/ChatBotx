@@ -88,7 +88,7 @@ async def set_language(client: Client, message: Message):
     )
 
 
-@ShrutiCHATBOT.on_message(filters.command(["resetlang", "nolang"]))
+@ShrutiCHATBOT.on_message(filters.command(["cresetlang", "cnolang"]))
 async def reset_language(client: Client, message: Message):
     chat_id = message.chat.id
     lang_db.update_one({"chat_id": chat_id}, {"$set": {"language": "nolang"}}, upsert=True)
