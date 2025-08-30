@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Telegram API
-API_ID = int(os.getenv("API_ID", 6435225))  
+API_ID = int(os.getenv("API_ID", "26066227"))  
 API_HASH = os.getenv("API_HASH", "4e984ea35f854762dcde906dce426c2d")
 
 # Bot Token / String Session
