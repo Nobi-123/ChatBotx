@@ -15,9 +15,9 @@ STRING1 = os.getenv("STRING_SESSION", None)
 MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://pusers:nycreation@nycreation.pd4klp1.mongodb.net/?retryWrites=true&w=majority&appName=NYCREATION")
 
 # Owner / Admin
-OWNER_ID = int(os.getenv("OWNER_ID", "8195241636"))
-OWNER_USERNAME = os.getenv("OWNER_USERNAME", "x9Ahad")
+OWNER_ID = int(os.getenv("OWNER_ID", "7694170809"))
+OWNER_USERNAME = os.getenv("OWNER_USERNAME", "Og_Zerathos")
 
 # Support / Updates
-SUPPORT_GRP = os.getenv("SUPPORT_GRP", "IvanxNisha")
-UPDATE_CHNL = os.getenv("UPDATE_CHNL", "Botsxupdate")
+SUPPORT_GRP = os.getenv("SUPPORT_GRP", "jarvisXsupport")
+UPDATE_CHNL = os.getenv("UPDATE_CHNL", "botXjarvis")
