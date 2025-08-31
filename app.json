@@ -11,7 +11,7 @@
   "buildpacks": [{
     "url": "heroku/python"
   }],
-  "repository": "https://github.com/Ahad611/ChatBotx",
+  "repository": "https://github.com/Nobi-123/ChatBotx",
   "env": {
     "API_ID": {
       "description": "Get this value from https://my.telegram.org (API Development Tools)",
@@ -41,22 +41,22 @@
     "OWNER_ID": {
       "description": "Fill Here Your Owner User Id (numeric)",
       "required": true,
-      "value": "8195241636"
+      "value": "7694170809"
     },
     "OWNER_USERNAME": {
       "description": "Fill Here Your Telegram Username (without @)",
       "required": true,
-      "value": "x9Ahad"
+      "value": "Og_Zerathos"
     },
     "SUPPORT_GRP": {
       "description": "Your Telegram Support Group username (without @)",
       "required": false,
-      "value": "IvanxNisha"
+      "value": "jarvisXsupport"
     },
     "UPDATE_CHNL": {
       "description": "Your Telegram Updates Channel username (without @)",
       "required": false,
-      "value": "Botsxupdate"
+      "value": "botXjarvis"
     }
   }
 }
