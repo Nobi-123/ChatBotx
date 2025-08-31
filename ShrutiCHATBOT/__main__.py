@@ -69,31 +69,6 @@ async def anony_boot():
         importlib.import_module("ShrutiCHATBOT.modules." + all_module)
         LOGGER.info(f"📦 Loaded Module: {Fore.CYAN}{all_module}{Style.RESET_ALL}")
 
-    # ✅ Bot Commands
-    try:
-        await ShrutiCHATBOT.set_bot_commands(
-            commands=[
-                   BotCommand("cstart", "Start the bot"),
-                   BotCommand("chelp", "Get the help menu"),
-                 #  BotCommand("clone", "Make your own chatbot"),
-                 #  BotCommand("idclone", "Make your id-chatbot"),
-                 #  BotCommand("cloned", "Get List of all cloned bot"),
-                 #  BotCommand("ping", "Check if the bot is alive or dead"),
-                   BotCommand("clang", "Select bot reply language"),
-                 #  BotCommand("chatlang", "Get current using lang for chat"),
-                   BotCommand("cresetlang", "Reset to default bot reply lang"),
-                 #  BotCommand("id", "Get users user_id"),
-                 #  BotCommand("stats", "Check bot stats"),
-                 #  BotCommand("gcast", "Broadcast any message to groups/users"),
-                   BotCommand("chatbot", "Enable or disable chatbot"),
-                 #  BotCommand("status", "Check chatbot enable or disable in chat"),
-                   BotCommand("cshayri", "Get random shayri for love"),
-                #   BotCommand("ask", "Ask anything from ChatGPT"),
-           ]
-        )
-        LOGGER.info("✅ Bot commands set successfully.")
-    except Exception as ex:
-        LOGGER.error(f"❌ Failed to set bot commands: {ex}")
 
     LOGGER.info(f"🎉 @{ShrutiCHATBOT.username} is fully up & running! 🚀")
     await idle()
