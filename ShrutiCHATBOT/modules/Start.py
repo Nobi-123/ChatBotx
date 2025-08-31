@@ -278,15 +278,15 @@ async def start(_, m: Message):
         await accha.delete()
         
         umm = await m.reply_sticker(sticker=random.choice(STICKER))
-        chat_photo = BOT  
+        chat_photo = "ShrutiCHATBOT/uu.mp4" 
         if m.chat.photo:
             try:
                 userss_photo = await ShrutiCHATBOT.download_media(m.chat.photo.big_file_id)
                 await umm.delete()
                 if userss_photo:
-                    chat_photo = userss_photo
+                    chat_photo = "ShrutiCHATBOT/uu.mp4"
             except AttributeError:
-                chat_photo = BOT  
+                chat_photo = "ShrutiCHATBOT/uu.mp4" 
 
         users = len(await get_served_users())
         chats = len(await get_served_chats())
