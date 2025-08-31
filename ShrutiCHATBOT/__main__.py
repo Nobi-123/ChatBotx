@@ -6,7 +6,6 @@ import threading
 import config
 from ShrutiCHATBOT import ID_CHATBOT
 from pyrogram import idle
-from pyrogram.types import BotCommand
 from config import OWNER_ID
 from ShrutiCHATBOT import LOGGER, ShrutiCHATBOT, userbot, load_clone_owners
 from ShrutiCHATBOT.modules import ALL_MODULES
