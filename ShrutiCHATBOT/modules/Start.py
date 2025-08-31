@@ -49,7 +49,9 @@ EMOJIOS = [
     "🕊",
 ]
 
-BOT = "ShrutiCHATBOT/uu.mp4"
+BOT = [ 
+    "ShrutiCHATBOT/uu.mp4"
+]
 IMG = [
     "ShrutiCHATBOT/ss.jpg",
     "ShrutiCHATBOT/nn.jpeg",
@@ -278,16 +280,16 @@ async def start(_, m: Message):
         await accha.delete()
         
         umm = await m.reply_sticker(sticker=random.choice(STICKER))
-        chat_photo = "ShrutiCHATBOT/uu.mp4" 
+        chat_photo = BOT
         if m.chat.photo:
             try:
                 userss_photo = await ShrutiCHATBOT.download_media(m.chat.photo.big_file_id)
                 await umm.delete()
                 if userss_photo:
-                    chat_photo = "ShrutiCHATBOT/uu.mp4"
+                    chat_photo = userss_photo
             except AttributeError:
-                chat_photo = "ShrutiCHATBOT/uu.mp4" 
-
+                chat_photo = BOT
+                
         users = len(await get_served_users())
         chats = len(await get_served_chats())
         UP, CPU, RAM, DISK = await bot_sys_stats()
